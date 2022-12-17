@@ -43,7 +43,7 @@ See this example highlighted public-key in the below img,
 
 <div align='center'>  
 
-![publickey](assets\eg_publicKey.JPG)
+![publickey](assets/eg_publicKey.JPG)
 </div>
 
 You'll find a similar newly generated public key in your terminal output.
