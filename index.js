@@ -4,11 +4,12 @@ const {
     PublicKey,
     clusterApiUrl,
     Keypair,
-    LAMPORTS_PER_SOL
+    LAMPORTS_PER_SOL,
 } = require("@solana/web3.js");
 
 // Create a new keypair
 const newPair = new Keypair();
+console.log(newPair)
 
 // Exact the public and private key from the keypair
 const publicKey = new PublicKey(newPair._keypair.publicKey).toString();
@@ -18,7 +19,7 @@ const privateKey = newPair._keypair.secretKey;
 const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
 console.log("Public Key of the generated keypair", publicKey);
-console.log("Private Key of the generated keypair", privateKey);
+//console.log("Private Key of the generated keypair", privateKey);
 
 // Get the wallet balance from a given private key
 const getWalletBalance = async () => {
@@ -52,7 +53,7 @@ const airDropSol = async () => {
         );
         await connection.confirmTransaction(fromAirDropSignature);
     } catch (err) {
-        console.log(err);
+        console.log('Something went Wrong!', err);
     }
 };
 
